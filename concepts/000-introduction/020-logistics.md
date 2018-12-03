@@ -1,12 +1,4 @@
-You and your partner are [a team](https://en.wikipedia.org/wiki/The_A-Team). We recommend the "Forking Workflow" for sharing your source code with each other. Read more about that workflow [here](https://www.atlassian.com/git/tutorials/comparing-workflows#forking-workflow).
-
-Defense Against the Dark Arts is a multi-round game of security. Really it is like a bunch of mini-workshops back-to-back.
-
-You will play a number of rounds, each with three phases: instruction (with attack demo), defense discovery, and defense review. You will be playing against "the house"—your existing application is insecure and you're trying to defend it against the attack demos.
-
-You can gain points for implementing adequate defensive maneuvers. Whoever gets the most points wins...absolutely nothing! So have fun either way :)
-
-Each round, each phase will have an allotted time.
+Let's checkout the codebase.
 
 ## Phase 1: Instruction
 
