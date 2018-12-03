@@ -1,12 +1,12 @@
 const { Workshop } = require('ldcli');
 
 module.exports = function() {
-    var workshop = Workshop({  name: "Auther: Defense Against the Dark Arts", slug: "auther-defense-against-the-dark-arts", description: "In this game, find the security holes in our \"fully functional\" Auther application—and plug them quickly, before your opponent has a chance to take advantage of these vulnerabilities." });
+    var workshop = Workshop({  name: "Auther: FullBlast Academy of Game", slug: "fullblast-academy-of-game", description: "Make a cool game!" });
 
   workshop
     .Concept({ name: "Introduction", slug: "introduction", draftMode: false })
-      .Action({ name: "Goal", slug: "goal", draftMode: false, visibilityLevel: 1 })
-      .Action({ name: "Starting Point", slug: "starting-point", draftMode: false, visibilityLevel: 1 })
+      .Action({ name: "Context", slug: "context", draftMode: false, visibilityLevel: 1 })
+      .Action({ name: "Goal & Starting Point", slug: "goal-&-startingpoint", draftMode: false, visibilityLevel: 1 })
       .Action({ name: "Logistics - Test", slug: "logistics", draftMode: false, visibilityLevel: 1 })
       .Action({ name: "Internal IP Address", slug: "internal-ip-address", draftMode: true, visibilityLevel: 1 })
       .Action({ name: "Readings", slug: "readings", draftMode: false, visibilityLevel: 1 })
