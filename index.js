@@ -3,8 +3,7 @@ const { Workshop } = require('ldcli');
 module.exports = function() {
     var workshop = Workshop({  name: "FullBlast Academy of Game", slug: "full-blast-academy-of-game", description: "A workshop to make a Game!" });
 
-  workshop
-  .Concept({ name: "Introduction", slug: "introduction", draftMode: false })
+  workshop.Concept({ name: "Introduction", slug: "introduction", draftMode: false })
   .Action({ name: "Context", slug: "context", draftMode: false, visibilityLevel: 1 })
   .Action({ name: "Goal & Starting Point", slug: "goal-&-startingpoint", draftMode: false, visibilityLevel: 1 })
   .Action({ name: "Logistics - Test", slug: "logistics", draftMode: false, visibilityLevel: 1 })
@@ -70,4 +69,4 @@ module.exports = function() {
   .Action({ name: "Review", slug: "review", draftMode: false, visibilityLevel: 2 })
 
 return workshop;
-
+}
