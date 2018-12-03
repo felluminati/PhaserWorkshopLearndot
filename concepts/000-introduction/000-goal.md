@@ -1,0 +1,5 @@
+The Open Web Application Security Project (OWASP) has catalogued its take on the [top 10 web security vulnerabilities](https://www.owasp.org/index.php/Top_10_2013-Top_10), "selected and prioritized according to [prevalence], exploitability, detectability, and impact estimates". There will be 5 exercises that span 6 vulnerabilities from OWASP's list. The 2017 list came out but was [rejected](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project#tab=OWASP_Top_10_for_2017_Release_Candidate_1).
+
+Our starting point in this workshop is a seemingly complete *Auther* application. Yet beneath its sexy veneer is a sinister truth: the application is outrageously insecure. You're about to fix that.
+
+Security on the web is subtle and complicated. The exercises you're about to go through should push your understanding of full stack web applications. By the end, you should have a good grounding in the common attacks, and more importantly you should be prepared to defend against them.

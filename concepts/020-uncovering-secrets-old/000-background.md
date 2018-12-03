@@ -1,0 +1,3 @@
+There are a number of ways to have basic [security misconfiguration](https://www.owasp.org/index.php/Top_10_2013-A5-Security_Misconfiguration). In general, these involve accidentally sticking with the defaults of your system, or overlooking some interaction between the various technologies and environments involved in making your app do what it does.
+
+Which is pretty vague. For this particular exercise, we will be focusing on one such misconfiguration: accidental exposure of *application secrets*. Application secrets are *not* the same as user secrets. Which is still pretty vague :)

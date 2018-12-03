@@ -1,0 +1,1 @@
+It is easy to [mismanage authentication and/or credential storage](https://www.owasp.org/index.php/Top_10_2013-A2-Broken_Authentication_and_Session_Management). Properly verifying a user, as well as securely transmitting and storing their credentials, is no easy task.
