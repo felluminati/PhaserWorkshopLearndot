@@ -1,15 +1,13 @@
 const { Workshop } = require('ldcli');
 
 module.exports = function() {
-    var workshop = Workshop({  name: "Auther: FullBlast Academy of Game", slug: "fullblast-academy-of-game", description: "Make a cool game!" });
+    var workshop = Workshop({  name: "FullBlast Academy of Game", slug: "full-blast-academy-of-game", description: "A workshop to make a Game!" });
 
-  workshop
-    .Concept({ name: "Introduction", slug: "introduction", draftMode: false })
-      .Action({ name: "Context", slug: "context", draftMode: false, visibilityLevel: 1 })
-      .Action({ name: "Goal & Starting Point", slug: "goal-&-startingpoint", draftMode: false, visibilityLevel: 1 })
-      .Action({ name: "Logistics - Test", slug: "logistics", draftMode: false, visibilityLevel: 1 })
-      .Action({ name: "Internal IP Address", slug: "internal-ip-address", draftMode: true, visibilityLevel: 1 })
-      .Action({ name: "Readings", slug: "readings", draftMode: false, visibilityLevel: 1 })
+  workshop.Concept({ name: "Intro to Phaser", slug: "intro-to-phaser", draftMode: false })
+  .Action({ name: "Context", slug: "context", draftMode: false, visibilityLevel: 1 })
+  .Action({ name: "Goal & Starting Point", slug: "goal-&-startingpoint", draftMode: false, visibilityLevel: 1 })
+  .Action({ name: "Phaser Cycle", slug: "phaser-cycle", draftMode: false, visibilityLevel: 1 })
+  .Action({ name: "Readings", slug: "readings", draftMode: false, visibilityLevel: 1 })
     .Concept({ name: "Adding Scenes", slug: "adding-scenes", draftMode: true })
       .Action({ name: "Background", slug: "background", draftMode: false, visibilityLevel: 2 })
     .Concept({ name: "Adding Sprites And Groups", slug: "adding-sprites-and-groups", draftMode: true })
@@ -47,6 +45,5 @@ module.exports = function() {
     .Concept({ name: "Conclusion", slug: "conclusion", draftMode: false })
       .Action({ name: "Review", slug: "review", draftMode: false, visibilityLevel: 2 })
 
-  return workshop;
-
+return workshop;
 }
