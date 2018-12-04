@@ -16,6 +16,8 @@ The first two methods are static, however. Update will run every frame and do wh
 
 An aside on frames:
 
+![animation](https://media.giphy.com/media/OBAcrBgknZRf2/giphy.gif)
+
 Frames are an animation term used to describe a single complete picture in a series of images. Swaping frames sequencially gives the illusion of movement called animation. The speed at which this is done is refered to as Frame Rate. It's also worth noting that the human eye (on average) can only really notice 45 frames per second. Some can notice more than 200 though!
 
 <guide>

@@ -8,7 +8,7 @@ Take a moment to glance around the project files. They include:
 
 - A public folder where all assets are served from, and where our bundle.js will live
 - A src folder where our various script files will be housed
-- A mysterious typings folder that uses black magics to use autocomplete with Phaser inside VSC
+- A mysterious typings folder that uses black magics to use autocomplete with Phaser inside VSC (don't worry, we won't be messing with that!)
 - The usual bits and bobs of webpack config and package.json
 
 Once you have it cloned be sure to run npm install. Then, try running npm start, the script located in the package.json file. This script will build the webpack bundle for you and spin up a dev server to host our game. You should be able to go to localhost: 8080 and checkout your game!
@@ -17,6 +17,7 @@ Once you have it cloned be sure to run npm install. Then, try running npm start,
 Total darkness!
 Not very exciting. Yet!
 Go ahead and open your dev tools and in the console you should see Phaser has started up it's client!
+![phaser client](https://learndotresources.s3.amazonaws.com/workshop/5c05a8e36ed8580004fb944e/phaserConsole.png)
 </hint>
 
 <guide>
