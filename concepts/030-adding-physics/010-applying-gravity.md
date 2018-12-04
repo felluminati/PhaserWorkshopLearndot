@@ -18,4 +18,4 @@ In FgScene:
 // ... Code below omitted
 ```
 
-What did we just do? With a single call to collider() we have now enabled our player to physically collide with the ground, preventing him from falling through.
+What did we just do? With a single call to collider() we have now enabled our player to physically collide with the ground, preventing him from falling through. We can customize what happens when two game objects collide, but for now, the default behavior is fine.
