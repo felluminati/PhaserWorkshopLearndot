@@ -1,3 +1,21 @@
-When your site [lacks access control](https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control), it means that users can take actions that they should not be allowed to take. For example, if on Facebook it were possible for any user to update my status, this would be an example of a missing access control.
+## Background
 
-The frontend of *Auther* currently implies that certain users are able to take certain actions and others are not. Through its UI it further implies what actions *no user may take*.
+In order for our game objects to move and collide with one another, we need to add physics to our game. Luckily, Phaser comes with a few physics engines already baked in. We're going to be using the 'Arcade Physics' game engine, which is a simple but fast physics engine.
+
+First we're going to need to modify the config. Add the following option:
+
+```javascript
+  physics: {    // Specify physics engine and configuration
+    default: 'arcade',  // A simple and performant physics engine
+    arcade: {
+      gravity: { y: 1500 },  // Game objects will be pulled down along the y-axis
+                        // The number 1500 is arbitrary. The higher, the stronger the pull.
+                        // A negative value will pull game objects up along the y-axis
+      debug: false,
+    }
+  }
+```
+<hint title="After you've applied physics and gravity">
+Nothing is moving! Why not? We'll need to change our player into a physics object so that our gravity configuration can be applied to it. We'll do that in the next section.
+</hint>
+
