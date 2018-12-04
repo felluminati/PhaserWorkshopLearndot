@@ -1,6 +1,6 @@
 The starting point for this workshop can be found [here](https://github.com/felluminati/PhaserWorkshop/tree/starting_point). Fork this repo and then clone it locally.
 
-(https://learndotresources.s3.amazonaws.com/workshop/5c05a8e36ed8580004fb944e/fullBlast.gif)
+![fullblast game](https://learndotresources.s3.amazonaws.com/workshop/5c05a8e36ed8580004fb944e/fullBlast.gif)
 
 In this workshop, we will be creating a very simple 2D shooting game called Full Blast Academy. It's meant to get you up and running with Phaser quickly and introduce you to basic game developement concepts such as: moving and animating sprites, handling collisions between objects, and adding sound effects. Hopefully it'll inspire you to create your own unique game!
 
