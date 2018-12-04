@@ -1,0 +1,10 @@
+Broadly speaking, a [cross-site scripting (XSS) attack](https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29) involves inadvertant execution of malicious code on the client, as dictated by *another* client. Consider the infamous [Samy Worm](http://betanews.com/2005/10/13/cross-site-scripting-worm-hits-myspace/). MySpace user Samy Kamkar was able to embed runnable JavaScript on his profile page, thus triggering that script to run for *other* clients who visited his page. The really neat trick was how he then embedded the same script on those clients' profiles, so that now any clients who visited those profiles would also trigger the script, etc.
+
+There's another form of XSS known as 'reflected'. [OWASP details it well](https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29#Reflected_XSS_Attacks):
+> Reflected attacks are those where the injected script is reflected off the web server, such as in an error message, search result, or any other response that includes some or all of the input sent to the server as part of the request. Reflected attacks are delivered to victims via another route, such as in an e-mail message, or on some other web site. When a user is tricked into clicking on a malicious link, submitting a specially crafted form, or even just browsing to a malicious site, the injected code travels to the vulnerable web site, which reflects the attack back to the user’s browser.
+
+<guide>
+You have read the above
+</guide>
+
+<script>alert('this is XSS');</script>
