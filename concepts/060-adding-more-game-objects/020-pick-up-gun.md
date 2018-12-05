@@ -1,8 +1,8 @@
 ## Picking up a Laser Gun
 
-So far we've only used default collision logic for our game objects. In this case, we'd like our player to pick up the gun when he touches it, so we need to provide custom logic.
+So far we've only used the default collision logic for our game objects. However, we're going to need more than that in this case: we'd like our player to pick up the gun when he touches it.
 
-To do that, we're going to create a callback function that handles the collision and register it with the game engine like so:
+To apply custom logic to a collision, we're going to create a callback function that handles the collision. We'll need register the callback with the game engine like so:
 
 In FgScene.js:
 ```javascript
@@ -42,12 +42,22 @@ Take a crack at filling in the game logic for collecting the gun. Here's the log
 
 - Make the gun disappear from the ground
 - Create a variable to track whether the player is armed
--
+- For the player, display the sprite showing he's holding the laser gun
 
 <hint title="Picking up the gun">
 In FgScene.js:
 ```javascript
   // ... Code omitted
+
+  create() {
+    // ...
+
+    this.anims.create({
+      key: 'idleArmed',
+      frames: [{ key: 'josh', frame: 6 }],
+      frameRate: 10,
+    });
+  }
 
   // Callback fn
   collectGun(player, gun) {
@@ -56,6 +66,30 @@ In FgScene.js:
     // Set the player to 'armed'
     this.player.armed = true;
   }
+```
+
+In Player.js:
+```javascript
+export default class Player extends Phaser.Physics.Arcade.Sprite {
+  // ... Code omitted
+
+  update() {
+    // ...
+    if (cursors.left.isDown) {
+      // ...
+    } else if (cursors.right.isDown) {
+      // ...
+    } else {
+      this.setVelocityX(0);
+      if (!this.armed) {
+        this.anims.play('idleUnarmed');
+      } else {
+        this.anims.play('idleArmed');
+      }
+    }
+    // ...
+  }
+}
 ```
 </hint>
 
