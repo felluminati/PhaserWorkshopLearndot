@@ -1,93 +1,170 @@
 ## Adding the Lasers
 
-Now we'll do the preliminary set up for the lasers that will be fired from our laser gun. We won't add them to our scene yet, but in the next section, we'll make it so that they dynamically spawn from our gun and fly in the direction that our player is facing.
+All that's left to make our gun operational is to have it fire lasers when you press the Spacebar. We'll need to do the following:
 
+- Create a Laser entity to represent a single laser.
+  * It will take: startingX, startingY, direction, speed
+  * It will be responsible for moving the laser sprite in the specified direction
+  * Each laser will have a timeout, so that we don't run out of memory from creating an infinite number of them
+- Preload the laser asset (assets/sprites/laserBolt.png)
+- Put in logic that checks whether the Spacebar is being pressed
+  * Dynamically create lasers as long as the Spacebar is held down
+- Add collision between the lasers and the enemy
+- Create a pool of laser bolts that can be reused instead of creating a new one each time -- for better performance (*We'll do this in the next section)
 
-- Add the laser (assets/sprites/laserBolt.png)
+Let's first start by creating our Laser entity and loading the asset:
 
-<hint title="Adding laser solution">
-entity/Gun.js:
+<hint title="Solution">
+In entity/Laser.js
 ```javascript
 import 'phaser';
 
-export default class Gun extends Phaser.Physics.Arcade.Sprite {
-  constructor(scene, x, y, spriteKey) {
+export default class Laser extends Phaser.Physics.Arcade.Sprite {
+  constructor(scene, x, y, spriteKey, facingLeft) {
     super(scene, x, y, spriteKey);
     // Store reference of scene passed to constructor
     this.scene = scene;
-    // Add gun to scene and enable physics
+    // Add laser to scene and enable physics
     this.scene.physics.world.enable(this);
     this.scene.add.existing(this);
+
+    // true or false
+    this.facingLeft = facingLeft;
+    // Set how fast the laser travels (pixels/ms). Hard coded it here for simplicity
+    this.speed = Phaser.Math.GetSpeed(800, 1); // (distance in pixels, time (ms))
+    // How long the laser will live (ms). Hard coded here for simplicity
+    this.lifespan = 900;
+    // Important to not apply gravity to the laser bolt!
+    this.body.setAllowGravity(false);
+  }
+
+  // Check which direction the player is facing and move the laserbolt in that direction as long as it lives
+  update(time, delta) {
+    this.lifespan -= delta;
+    const moveDistance = this.speed * delta
+    if (this.facingLeft) {
+      this.x -= moveDistance
+    } else {
+      this.x += moveDistance
+    }
+    // If this laser has run out of lifespan, we "kill it" by deactivating it.
+    // We can then reuse this laser object
+    if (this.lifespan <= 0) {
+      this.setActive(false);
+      this.setVisible(false);
+    }
   }
 }
-
 ```
 
-FgScene.js:
+In FgScene.js:
 ```javascript
-// ... Code omitted
+// ...
 
 preload() {
   // ...
-  this.load.image('gun', 'assets/sprites/gun.png');
+
+  this.load.image('laserBolt', 'assets/sprites/laserBolt.png');
 }
 
-create() {
-  // ...
-  // Gun. Our sprite is a little large, so we'll scale it down
-  this.gun = new gun(this, 300, 400, 'gun').setScale(0.25);
-  this.physics.add.collider(this.gun, this.groundGroup);
-}
+// We're not going to add it to the scene just yet. Preloading the asset is fine for now
 
 ```
 </hint>
 
-We should see our shiney new gun on the ground:
+Now let's check if the Spacebar is pressed. If so, we'll create a new laser. There's multiple options for where we can put this logic. Good arguments could be made for putting it in either Player, Gun, Laser, or FgScene. Let's just put it our Gun since it makes intuitive sense that lasers are emitted from a gun.
 
-![laser gun](https://learndotresources.s3.amazonaws.com/workshop/5c05a8e36ed8580004fb944e/fullblast-gun.png)
-
-
-- Add the laser bullet (assets/sprites/laserBolt.png)
-
-- In FgScene create(), instantiate a new instance of the enemy and place him at the other side of the screen at position (600, 400)
-- Add collider for the enemy and the ground (so he doesn't fall through)
-
-<hint title="Enemy.js solution">
+<hint title="Solution">
+In Gun.js:
 ```javascript
-export default class Enemy extends Phaser.Physics.Arcade.Sprite {
-  constructor(scene, x, y) {
-    super(scene, x, y, 'enemy');
-    // Store reference of scene passed to constructor
-    this.scene = scene;
-    // Add enemy to scene and enable physics
-    this.scene.physics.world.enable(this);
-    this.scene.add.existing(this);
-    // Scale sprite
-    this.setScale(0.25);
+export default class Gun extends Phaser.Physics.Arcade.Sprite {
+  constructor(scene, x, y, spriteKey) {
+    // ... Code omitted
+
+    // Set the firing delay (ms)
+    this.fireDelay = 100;
+    // Keep track of when the gun was last fired
+    this.lastFired = 0;
+  }
+
+  // Check if the shoot button is pressed and how long its been since we last fired
+  update(time, player, cursors, fireLaserFn) {
+    if (cursors.space.isDown && time > this.lastFired) {
+      if (player.armed) {
+        fireLaserFn();    // We'll implement this function in FgScene
+        this.lastFired = time + this.fireDelay;
+      }
+    }
   }
 }
 ```
-</hint>
 
-<hint title="FgScene.js solution">
+In FgScene.js:
 ```javascript
-import enemy from '../entity/Enemy'
-
 export default class FgScene extends Phaser.Scene {
-  // ... Code omitted
+  constructor() {
+    super('FgScene');
 
-  preload() {
     // ...
-    this.load.image('enemy', 'assets/sprites/brandon.png')
+    this.fireLaser = this.fireLaser.bind(this);
   }
 
   create() {
     // ...
-    this.enemy = new enemy(this, 600, 400)
+
+    // We're going to create a group for our lasers
+    this.lasers = this.physics.add.group({
+      classType: Laser,
+      runChildUpdate: true,
+      allowGravity: false   // Important! When an obj is added to a group, it will inherit
+                          // the group's attributes. So if this group's gravity is enabled,
+                          // the individual lasers will also have gravity enabled when they're
+                          // added to this group
+    });
   }
+
+  // time: total time elapsed (ms)
+  // delta: time elapsed (ms) since last update() call. 16.666 ms @ 60fps
+  update(time, delta) {
+    // ...
+
+    this.gun.update(
+      time,
+      this.player,
+      this.cursors,
+      this.fireLaser  // Callback fn for creating lasers
+    );
+  }
+
+  // Callback fn. We implement it here b/c our scene has references to the lasers group and the player
+  fireLaser(x, y, left) {
+    // These are the offsets from the player's position that make it look like
+    // the laser starts from the gun in the player's hand
+    const offsetX = 56;
+    const offsetY = 14;
+    const laserX =
+      this.player.x + (this.player.facingLeft ? -offsetX : offsetX);
+    const laserY = this.player.y + offsetY;
+
+    // Create a laser bullet and scale the sprite down
+    const laser = new Laser(
+      this,
+      laserX,
+      laserY,
+      'laserBolt',
+      this.player.facingLeft
+    ).setScale(0.25);
+    // Add our newly created to the group
+    this.lasers.add(laser);
+  }
+}
 ```
 </hint>
 
-Now we should see our enemy appear at the other side of the screen.
+Now our gun should be able to fire lasers!
 
-<<Add image>>
+<< Image >>
+
+
+
+

@@ -44,7 +44,7 @@ Take a crack at filling in the game logic for collecting the gun. Here's the log
 - Create a variable to track whether the player is armed
 - For the player, display the sprite showing he's holding the laser gun
 
-<hint title="Picking up the gun">
+<hint title="Solution: picking up the gun">
 In FgScene.js:
 ```javascript
   // ... Code omitted
@@ -52,6 +52,7 @@ In FgScene.js:
   create() {
     // ...
 
+    // Define the single frame in the tilesheet that represents the player idle and holding a gun
     this.anims.create({
       key: 'idleArmed',
       frames: [{ key: 'josh', frame: 6 }],
@@ -80,7 +81,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     } else if (cursors.right.isDown) {
       // ...
     } else {
-      this.setVelocityX(0);
+      // ...
       if (!this.armed) {
         this.anims.play('idleUnarmed');
       } else {
