@@ -163,7 +163,7 @@ export default class FgScene extends Phaser.Scene {
 
 Now our gun should be able to fire lasers!
 
-<< Image >>
+![fire-laser](https://learndotresources.s3.amazonaws.com/workshop/5c05a8e36ed8580004fb944e/fullblast-fire-laser.gif)
 
 
 

@@ -55,5 +55,3 @@ export default class FgScene extends Phaser.Scene {
 </hint>
 
 Now we should see our enemy appear at the other side of the screen. We can also jump on the enemy's head and also push him off.
-
-<<Add image>>
