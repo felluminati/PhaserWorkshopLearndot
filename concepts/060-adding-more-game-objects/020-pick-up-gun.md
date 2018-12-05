@@ -1,8 +1,8 @@
-## Picking up a Laser Gun
+## Are You Picking Up What I'm Putting Down?
 
 So far we've only used the default collision logic for our game objects. However, we're going to need more than that in this case: we'd like our player to pick up the gun when he touches it.
 
-To apply custom logic to a collision, we're going to create a callback function that handles the collision. We'll need register the callback with the game engine like so:
+To apply custom logic to a collision, we're going to create a callback function that handles the collision. We'll need to register the callback with the game engine like so:
 
 In FgScene.js:
 ```javascript
@@ -74,7 +74,7 @@ In Player.js:
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   // ... Code omitted
 
-  update() {
+  updateMovement(cursors) {
     // ...
     if (cursors.left.isDown) {
       // ...

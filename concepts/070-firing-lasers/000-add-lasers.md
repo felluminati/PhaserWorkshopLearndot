@@ -1,6 +1,6 @@
 ## Adding the Lasers
 
-All that's left to make our gun operational is to have it fire lasers when you press the Spacebar. We'll need to do the following:
+Our gun is impressive but it's not yet fully operational. All that's left is to have it fire lasers when you press the Spacebar. We'll need to do the following:
 
 - Create a Laser entity to represent a single laser.
   * It will take: startingX, startingY, direction, speed
@@ -72,7 +72,7 @@ preload() {
 ```
 </hint>
 
-Now let's check if the Spacebar is pressed. If so, we'll create a new laser. There's multiple options for where we can put this logic. Good arguments could be made for putting it in either Player, Gun, Laser, or FgScene. Let's just put it our Gun since it makes intuitive sense that lasers are emitted from a gun.
+Now let's check if the Spacebar is pressed. If so, we'll create a new laser. There's multiple options for where we can put this logic. Good arguments could be made for putting it in either Player, Gun, Laser, or FgScene. Let's just put it in our Gun since it makes intuitive sense that lasers are emitted from a gun.
 
 <hint title="Solution">
 In Gun.js:
