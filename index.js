@@ -14,7 +14,7 @@ module.exports = function() {
       .Action({ name: "Background Preload", slug: "background-preload", draftMode: false, visibilityLevel: 2 })
       .Action({ name: "Background Create", slug: "background-create", draftMode: true, visibilityLevel: 2 })
       .Action({ name: "Making the Player", slug: "making-the-player", draftMode: true, visibilityLevel: 2 })
-      .Action({ name: "Making the ground", slug: "making-th-ground", draftMode: false, visibilityLevel: 2 })
+      .Action({ name: "Making the ground", slug: "making-the-ground", draftMode: false, visibilityLevel: 2 })
     .Concept({ name: "Adding Physics", slug: "adding-physics", draftMode: true })
       .Action({ name: "Background", slug: "background", draftMode: false, visibilityLevel: 2 })
       .Action({ name: "Applying Gravity", slug: "applying-gravity", draftMode: false, visibilityLevel: 2 })
