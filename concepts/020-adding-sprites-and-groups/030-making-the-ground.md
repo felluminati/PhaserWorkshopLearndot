@@ -56,7 +56,7 @@ So what's going on here? Well, we give the scene a group called groundGroup and 
 
 </hint>
 
-If you peeked at your localhost you might have noticed something strange. Josh plummets to his doom but there's no ground! What gives? Well, all we've done is create an empty group and tell it what object it should use to populate itself. Next we'll need to do the populating. There's a couple ways we can achieve this, but we recommend a helper function here.
+If you peeked at your localhost you might have noticed something strange. Josh is still hanging around on the fridge but there's no ground! What gives? Well, all we've done is create an empty group and tell it what object it should use to populate itself. Next we'll need to do the populating. There's a couple ways we can achieve this, but we recommend a helper function here.
 
 <hint title="getting by with a little help from a function">
 ```javascript
@@ -86,6 +86,6 @@ All that's left is to call our new helper a couple times with some coordinates:
 // ... Below code omitted
 ```
 
-Sweet there's ground! But our player doesn't seem to notice and falls right through it! Hmm... we need a way to make him... collide with it ;)
+Sweet there's ground! Now we just need a way for our player to interact with it. It's time to get physical...
 
 </hint>

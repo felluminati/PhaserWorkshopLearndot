@@ -64,6 +64,6 @@ Now that he's loaded, Josh needs to be created in our scene. Think back to what 
 // ... Below code omitted
 ```
 
-You might have noticed Josh was pretty large there so we scale him down to keep things easy to fit in our game. You might have also noticed he fell into oblivion. Ouch. Don't worry, we can make some ground for him to land on!
+You might have noticed Josh was pretty large there so we scale him down to keep things easy to fit in our game. You might have also noticed he hangs in the air like a magnet on the fridge. We'll need to address that, but first, let's add some ground for him to run around on.
 
 </hint>
