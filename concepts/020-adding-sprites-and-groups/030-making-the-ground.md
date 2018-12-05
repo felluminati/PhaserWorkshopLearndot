@@ -86,6 +86,6 @@ All that's left is to call our new helper a couple times with some coordinates:
 // ... Below code omitted
 ```
 
-Sweet there's ground! But our player doesn't seem to notic it and falls right through it! Hmm... we need a way to make him... collide with it ;)
+Sweet there's ground! But our player doesn't seem to notice and falls right through it! Hmm... we need a way to make him... collide with it ;)
 
 </hint>
