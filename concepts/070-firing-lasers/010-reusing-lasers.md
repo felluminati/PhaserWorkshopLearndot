@@ -95,7 +95,7 @@ Another fun way to verify that our lasers are being reused:
 - Fire a shot at the enemy and note the lingering outline of the laser as it hits the enemy and disappears / becomes inactive
 - Fire another shot in the opposite direction and notice that the inactive laser disappears -- it gets reused as our new laser shot!
 
-![debug-reuse-lasers] (https://learndotresources.s3.amazonaws.com/workshop/5c05a8e36ed8580004fb944e/laser-pool-debug.gif)
+![debug-reuse-lasers](https://learndotresources.s3.amazonaws.com/workshop/5c05a8e36ed8580004fb944e/laser-pool-debug.gif)
 
 
 

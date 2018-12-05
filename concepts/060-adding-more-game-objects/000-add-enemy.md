@@ -18,13 +18,16 @@ For adding an enemy, we'll need to do a lot of similar steps to how we added our
 <hint title="Enemy.js solution">
 ```javascript
 export default class Enemy extends Phaser.Physics.Arcade.Sprite {
-  constructor(scene, x, y) {
-    super(scene, x, y, 'enemy');
+  constructor(scene, x, y, spriteKey) {
+    super(scene, x, y, spriteKey);
     // Store reference of scene passed to constructor
     this.scene = scene;
     // Add enemy to scene and enable physics
     this.scene.physics.world.enable(this);
     this.scene.add.existing(this);
+
+    // Turn him around to face player
+    this.flipX = !this.flipX;
   }
 }
 ```
@@ -39,13 +42,13 @@ export default class FgScene extends Phaser.Scene {
 
   preload() {
     // ...
-    this.load.image('enemy', 'assets/sprites/brandon.png')
+    this.load.image('brandon', 'assets/sprites/brandon.png')
   }
 
   create() {
     // ...
     // Scale the sprite to .25 (since it's too big)
-    this.enemy = new enemy(this, 600, 400).setScale(.25)
+    this.enemy = new enemy(this, 600, 400, 'brandon').setScale(.25)
 
     // ...
     this.physics.add.collider(this.enemy, this.groundGroup);
@@ -54,4 +57,4 @@ export default class FgScene extends Phaser.Scene {
 ```
 </hint>
 
-Now we should see our enemy appear at the other side of the screen. We can also jump on the enemy's head and also push him off.
+Now we should see our enemy Brandon appear at the other side of the screen. We can also jump on his head and also push him off.
