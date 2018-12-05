@@ -4,17 +4,21 @@ Finally, a happy landing! We've successfully created a player and some ground fo
 
 Before we can create our player's movements, we need to set up the player's controls. There's a couple ways to approach this:
 
-1. We could manually assign the keys specifically on the keyboard we want mapped as keys to listen to
-2. We can use a special, ready-made object in Phaser called the cursors
+* We could manually assign the keys we want Phaser to listen to
+* We can use a special, ready-made object in Phaser called the "cursors"
 ( hint: 2 is WAY easier ;) )
 Let's go ahead and create the cursors that our FgScene will need.
 
 <hint title="cursors">
 ```javascript
-import 'phaser';
+// ... Above code omitted
 
+create() {
+// ...
     // Assign the cursors
     this.cursors = this.input.keyboard.createCursorKeys();
+// ... Below code omitted
+}
 ```
 </hint>
 
