@@ -58,3 +58,5 @@ export default class FgScene extends Phaser.Scene {
 </hint>
 
 Now we should see our enemy Brandon appear at the other side of the screen. We can also jump on his head and also push him off.
+
+![enemy](https://learndotresources.s3.amazonaws.com/workshop/5c05a8e36ed8580004fb944e/fullblast-enemy.gif)
