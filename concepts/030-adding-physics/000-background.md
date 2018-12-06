@@ -21,7 +21,7 @@ export default {
   // ...
 }
 ```
-<hint title="After you've applied physics and gravity">
+<hint title="After you've updated the config">
 Nothing is moving! Why not? We'll need to change our player into a physics object so that our gravity configuration can be applied to it. We'll do that in the next section.
 </hint>
 
