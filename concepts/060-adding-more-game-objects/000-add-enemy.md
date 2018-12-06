@@ -4,12 +4,12 @@ We now have a player-controlled character that can run and jump. Great! But you 
 
 For adding an enemy, we'll need to do a lot of similar steps to how we added our player:
 
-- In FgScene, preload our sprite image: assets/sprites/brandon.png
-- Create an Enemy class that extends Phaser.Physics.Arcade.Sprite
+- In `FgScene`, preload our sprite image: `assets/sprites/brandon.png`
+- Create an `Enemy` class that extends `Phaser.Physics.Arcade.Sprite`
   * Apply the physics of the world to the enemy
   * Add itself to the scene
 
-- In FgScene create(), instantiate a new instance of the enemy and place him at the other side of the screen at position (600, 400)
+- In `FgScene` `create()`, instantiate a new instance of the enemy and place him at the other side of the screen at position (600, 400)
   * Scale the sprite to .25 (since it's too big)
 - Add collisions for:
   * enemy and the ground (so he doesn't fall through)

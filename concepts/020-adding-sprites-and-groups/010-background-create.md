@@ -5,12 +5,12 @@ Well, let's create them!
 
 ## Create()
 
-The create method is ready to be filled out! See if you can add those images to the scene! Hint: You'll need to tell it an x and y coordinate as well as what you're creating!
+The `create` method is ready to be filled out! See if you can add those images to the scene! Hint: You'll need to tell it an x and y coordinate as well as what you're creating!
 
 <hint title="Check out the docs... again!">
 [Here](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html)
 
-Woah, that is a LOT of functions... Take special note of .setScale()!
+Woah, that is a LOT of functions... Take special note of `.setScale()`!
 </hint>
 
 <hint title="create solution">

@@ -1,8 +1,10 @@
 ## Background
 
-In order for our game objects to move and collide with one another, we need to add physics to our game. Luckily, Phaser comes with a few physics engines already baked in. We're going to be using the 'Arcade Physics' game engine, which is a simple but fast physics engine.
+**Newton's Zeroth Law of Motion:** _Physics must be present._
 
-First we're going to need to modify the config. Add the following option:
+In order for our game objects to move and collide with one another, we need to add physics to our game. Luckily, Phaser comes with a few physics engines already baked in. We're going to be using the **_'Arcade Physics'_** game engine, which is a simple but fast physics engine.
+
+First we're going to need to modify the `config`. Add the following option:
 
 ```javascript
 export default {

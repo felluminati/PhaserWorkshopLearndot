@@ -4,7 +4,7 @@ So far we've only used the default collision logic for our game objects. However
 
 To apply custom logic to a collision, we're going to create a callback function that handles the collision. We'll need to register the callback with the game engine like so:
 
-In FgScene.js:
+In `FgScene.js`:
 ```javascript
 export default class FgScene extends Phaser.Scene {
   constructor() {
@@ -69,7 +69,7 @@ In FgScene.js:
   }
 ```
 
-In Player.js:
+In `Player.js`:
 ```javascript
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   // ... Code omitted

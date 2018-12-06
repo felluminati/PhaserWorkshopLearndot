@@ -1,5 +1,12 @@
-Broadly speaking, an [injection attack](https://www.owasp.org/index.php/Top_10_2013-A1-Injection) involves inadvertent execution of malicious code on the server. Imagine if you will an extreme scenario in which users are allowed to send arbitrary strings of Bash code to the server. In turn, the server evaluates this code without question, running it just like it would any other bash script. It is easy to see how a client could then read, write, or even delete files on the server.
+You have a few options for recording and editing your sounds:
+* Audacity -- Free, open-source software for recording and editing audio. (Windows, Linux, Mac)
+* [JFXR](https://jfxr.frozenfractal.com/#) -- Browser-based sound generator. With a single click, you can generate high-quality retro sound effects. [Github](https://github.com/ttencate/jfxr)
+* BFXR -- An improved version of SFXR. (Windows, Mac)
+* SFXR -- The original sound effect generator for games. (Windows, Linux, Mac)
 
-<guide>
-You have read the above
-</guide>
+
+
+##JXFR
+
+![jxfr](https://learndotresources.s3.amazonaws.com/workshop/5c05a8e36ed8580004fb944e/jfxr.png)
+

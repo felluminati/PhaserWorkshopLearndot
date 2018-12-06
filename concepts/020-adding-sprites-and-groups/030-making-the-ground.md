@@ -2,7 +2,7 @@ Well, our player exists. Only problem is he falls for eternity. Not ideal, so le
 
 ## The Ground
 
-Remember your training and create a new entity called Ground. Refer to your Player.js if you forget the structure.
+Remember your training and create a new entity called `Ground`. Refer to your `Player.js` if you forget the structure.
 
 <hint title="solution">
 ```javascript
@@ -33,13 +33,13 @@ this.load.image('ground', 'assets/sprites/ground.png');
 // ... Below code omitted
 ```
 
-Ah! We're back to load.image! That's because our ground here is static and we don't have a collection of images to deal with. We also don't need to specify the frame size either.
+Ah! We're back to `load.image`! That's because our ground here is static and we don't have a collection of images to deal with. We also don't need to specify the frame size either.
 </hint>
 
 ## Create()
 
 You're probably getting pretty good at this, but pump the breaks kid, we're taking a detour!
-If you glance back at that .gif from our goal you'll recall there are TWO bits of ground there. Our previous method would only make one. The solution? Groups!
+If you glance back at that .gif from our goal you'll recall there are _TWO_ bits of ground there. Our previous method would only make one. The solution? Groups!
 
 
 
@@ -52,7 +52,7 @@ this.groundGroup = this.physics.add.staticGroup({ classType: Ground });
 // ... Below code omitted
 ```
 
-So what's going on here? Well, we give the scene a group called groundGroup and add it as a staticGroup so the Arcade physics from our config file wont have an affect on the group. We then give it the class object we made and imported from our entity folder.
+So what's going on here? Well, we give the scene a group called `groundGroup` and add it as a `staticGroup` so the Arcade physics from our config file won't have an affect on the group. We then give it the class object we made and imported from our `entity` folder.
 
 </hint>
 
@@ -69,7 +69,7 @@ If you peeked at your localhost you might have noticed something strange. Josh i
 // ... Below code omitted
 ```
 
-This bad boy has the power to add new instances of the ground into our groundGroup using the create method available to group objects. All we need to do is tell it where to drop one in.
+This bad boy has the power to add new instances of the ground into our `groundGroup` using the `create` method available to group objects. All we need to do is tell it where to drop one in.
 
 An aside on groups:
 

@@ -2,20 +2,20 @@
 
 Our gun is impressive but it's not yet fully operational. All that's left is to have it fire lasers when you press the Spacebar. We'll need to do the following:
 
-- Create a Laser entity to represent a single laser.
-  * It will take: startingX, startingY, direction, speed
+- Create a `Laser` entity to represent a single laser.
+  * It will take: `startingX`, `startingY`, `direction`, `speed`
   * It will be responsible for moving the laser sprite in the specified direction
   * Each laser will have a timeout, so that we don't run out of memory from creating an infinite number of them
-- Preload the laser asset (assets/sprites/laserBolt.png)
+- Preload the laser asset (`assets/sprites/laserBolt.png`)
 - Put in logic that checks whether the Spacebar is being pressed
   * Dynamically create lasers as long as the Spacebar is held down
 - Add collision between the lasers and the enemy
 - Create a pool of laser bolts that can be reused instead of creating a new one each time -- for better performance (*We'll do this in the next section)
 
-Let's first start by creating our Laser entity and loading the asset:
+Let's first start by creating our `Laser` entity and loading the asset:
 
 <hint title="Solution">
-In entity/Laser.js
+In `entity/Laser.js`
 ```javascript
 import 'phaser';
 
@@ -57,7 +57,7 @@ export default class Laser extends Phaser.Physics.Arcade.Sprite {
 }
 ```
 
-In FgScene.js:
+In `FgScene.js`:
 ```javascript
 // ...
 
@@ -72,10 +72,10 @@ preload() {
 ```
 </hint>
 
-Now let's check if the Spacebar is pressed. If so, we'll create a new laser. There's multiple options for where we can put this logic. Good arguments could be made for putting it in either Player, Gun, Laser, or FgScene. Let's just put it in our Gun since it makes intuitive sense that lasers are emitted from a gun.
+Now let's check if the Spacebar is pressed. If so, we'll create a new laser. There's multiple options for where we can put this logic. Good arguments could be made for putting it in either `Player`, `Gun`, `Laser`, or `FgScene`. Let's just put it in our `Gun` since it makes intuitive sense that lasers are emitted from a gun.
 
 <hint title="Solution">
-In Gun.js:
+In `Gun.js`:
 ```javascript
 export default class Gun extends Phaser.Physics.Arcade.Sprite {
   constructor(scene, x, y, spriteKey) {
@@ -99,7 +99,7 @@ export default class Gun extends Phaser.Physics.Arcade.Sprite {
 }
 ```
 
-In FgScene.js:
+In `FgScene.js`:
 ```javascript
 export default class FgScene extends Phaser.Scene {
   constructor() {
