@@ -11,7 +11,7 @@ Take a moment to glance around the project files. They include:
 - A mysterious typings folder that uses black magics to use autocomplete with Phaser inside VSC (don't worry, we won't be messing with that!)
 - The usual bits and bobs of webpack config and package.json
 
-Once you have it cloned be sure to run npm install. Then, try running npm start, the script located in the package.json file. This script will build the webpack bundle for you and spin up a dev server to host our game. You should be able to go to localhost: 8080 and checkout your game!
+Once you have it cloned be sure to run `npm install`. Then, try running npm start (the script located in the package.json file). This script will build the webpack bundle for you and spin up a dev server to host our game. You should be able to go to `localhost:8080/public` and check out your game!
 
 <hint title="What do you see?">
 Total darkness!

@@ -33,16 +33,16 @@ module.exports = function() {
       .Action({ name: "Add Lasers", slug: "add-lasers", draftMode: false, visibilityLevel: 2 })
       .Action({ name: "Reusing Lasers", slug: "reusing-lasers", draftMode: false, visibilityLevel: 2 })
     .Concept({ name: "Adding Sound Effects", slug: "adding-sound-effects", draftMode: false })
-      // .Action({ name: "Background", slug: "background", draftMode: false, visibilityLevel: 2 })
-      // .Action({ name: "Defend", slug: "defend", draftMode: false, visibilityLevel: 2 })
+      .Action({ name: "Background", slug: "background", draftMode: false, visibilityLevel: 2 })
     .Concept({ name: "Custom Sounds", slug: "custom-sounds", draftMode: false })
       // .Action({ name: "Background", slug: "background", draftMode: false, visibilityLevel: 2 })
       // .Action({ name: "Defend", slug: "defend", draftMode: false, visibilityLevel: 2 })
     .Concept({ name: "Custom Sprites", slug: "custom-sprites", draftMode: false })
       // .Action({ name: "Backgound", slug: "backgound", draftMode: false, visibilityLevel: 2 })
       // .Action({ name: "Defend", slug: "defend", draftMode: false, visibilityLevel: 2 })
-    .Concept({ name: "Conclusion", slug: "conclusion", draftMode: false })
-      .Action({ name: "Review", slug: "review", draftMode: false, visibilityLevel: 2 })
+    .Concept({ name: "Further Exploration", slug: "further-exploration", draftMode: false })
+      .Action({ name: "Bonus Topics", slug: "bonus-topics", draftMode: false, visibilityLevel: 2 })
+      .Action({ name: "Brainstorming Ideas", slug: "brainstorming-ideas", draftMode: false, visibilityLevel: 2 })
 
 return workshop;
 }

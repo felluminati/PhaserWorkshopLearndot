@@ -2,13 +2,13 @@
 
 Now that we have an enemy, let's arm our player with a weapon. We can choose to start our player off with a weapon, but wouldn't it be cooler if our player started unarmed and then could pick up a laser gun from the ground? We could then use the same weapon-pick-up logic when adding more weapons in the future.
 
-- Add the gun (assets/sprites/gun.png) at position (300, 400).
+- Add the `Gun` entity (`assets/sprites/gun.png`) at position (300, 400).
 - Add collisions for:
   * the gun and the ground (so it doesn't fall through the floor)
   * gun and player (so the player can pick up the gun. *We'll do this in the next section)
 
 <hint title="Adding laser gun solution">
-entity/Gun.js:
+`entity/Gun.js`:
 ```javascript
 import 'phaser';
 
@@ -25,7 +25,7 @@ export default class Gun extends Phaser.Physics.Arcade.Sprite {
 
 ```
 
-FgScene.js:
+`FgScene.js`:
 ```javascript
 // ... Code omitted
 

@@ -5,9 +5,9 @@ Finally, a happy landing! We've successfully created a player and some ground fo
 Before we can create our player's movements, we need to set up the player's controls. There's a couple ways to approach this:
 
 * We could manually assign the keys we want Phaser to listen to
-* We can use a special, ready-made object in Phaser called the "cursors"
+* We can use a special, ready-made object in Phaser called the `cursors`
 ( hint: 2 is WAY easier ;) )
-Let's go ahead and create the cursors that our FgScene will need.
+Let's go ahead and create the `cursors` that our `FgScene` will need.
 
 <hint title="cursors">
 ```javascript
@@ -24,7 +24,7 @@ create() {
 
 ## Back to Player.js
 
-Alright we have our cursors. Some buttons included in the cursors object are up, down, left, right directional keys and the space bar. We can create a function in our Player that will take the cursors object and check to see if it's various keys are being pressed. Then we can add logic affecting the player's velocity on the X axis since we want him to move left and right across the level.
+Alright we have our `cursors`. Some buttons included in the cursors object are `up`, `down`, `left`, `right` directional keys and the `space bar`. We can create a function in our `Player` that will take the cursors object and check to see if it's various keys are being pressed. Then we can add logic affecting the player's velocity on the X axis since we want him to move left and right across the level.
 
 
 <hint title="movin' out">
@@ -47,7 +47,7 @@ updateMovement(cursors) {
 // ... Below code omitted
 ```
 
-So if we sense that the left key is down we will change the player's velocity to a negative number to move him left, and a positive number to go right. You'll notice at this point nothing happens when we try to move, however.  Let's go ahead and call our updateMovement function inside the player's update function and pass it the cursors.
+So if we sense that the `left` key is down we will change the player's velocity to a negative number to move him left, and a positive number to go right. You'll notice at this point nothing happens when we try to move, however.  Let's go ahead and call our `updateMovement` function inside the player's update function and pass it the cursors.
 
 ```javascript
 // ... Above code omitted
@@ -63,7 +63,7 @@ Still nothing? Hmm... what's missing...?
 
 ## Fg is key
 
-By now you may have figured it out, but consider this: the Scene's update function is the only one that's getting called every frame by the game. Our logic is in the Player's update function, not the scene's. To ensure our scene's update function can use the player's we just have to call it inside.
+By now you may have figured it out, but consider this: the Scene's `update` function is the only one that's getting called every frame by the game. Our logic is in the `Player`'s update function, not the scene's. To ensure our scene's `update` function can use the player's we just have to call it inside.
 
 
 
@@ -79,6 +79,6 @@ By now you may have figured it out, but consider this: the Scene's update functi
 // ... Below code omitted
 ```
 
-Since the scene has a player (this.player) it has all the methods available to that object (think compositional inheritance!). All we have to do is pass the player's update function the cursors on the scene and voila: we can move!
+Since the scene has a player (`this.player`) it has all the methods available to that object (think compositional inheritance!). All we have to do is pass the player's `update` function the cursors on the scene and voila: we can move!
 
 </hint>
