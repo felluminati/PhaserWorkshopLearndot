@@ -13,6 +13,9 @@ export default {
   // Since we'll be using pixel art, we want every beautiful pixel untouched!
   render: {
     pixelArt: true,
+  },
+  physics: {
+    default: 'arcade'
   }
 }
 ```
